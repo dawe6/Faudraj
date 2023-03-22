@@ -1,0 +1,30 @@
+Pripojovaci konektor:
+---------------------
+ 1 - propojka1	> OFF(n.c.) - normal, ON(GND) - zastaveni vga obrazu, vstup je osetreny odporem 10k na +5V
+ 2 - propojka2	> OFF(n.c.) - normal, ON(GND) - inverze barev, vstup je osetreny odporem 10k na +5V
+ 3 - propojka3	> viz tabulka Pouziti pridavne intenzity, vstup je osetreny odporem 10k na +5V
+ 4 - propojka4	> viz tabulka Pouziti pridavne intenzity, vstup je osetreny odporem 10k na +5V
+ 5 - GND	> zem		k propojkam
+ 6 - GND	> v MZ800 konektor T-3 pin 6
+ 7 - +5V	> v MZ800 konektor T-3 pin 7
+ 8 - RED	> v MZ800 konektor T-3 pin 10
+ 9 - GREEN	> v MZ800 konektor T-3 pin 8
+10 - BLUE	> v MZ800 konektor T-3 pin 9
+11 - BRIGHT	> v MZ800 konektor T-3 pin 2
+12 - VSYNC	> v MZ800 konektor T-3 pin 5
+13   nepouzito
+14   nepouzito
+15   nepouzito
+16   nepouzito
+17 - CLK17	> v MZ800 pravy horni roh GDG
+18   nepouzito
+19   nepouzito
+20   nepouzito
+
+Pouziti pridavne intenzity:
+---------------------------
+propojka3	propojka4	funkce
+OFF(n.c.)	OFF(n.c.)	normal
+ON(GND)		OFF(n.c.)	scanlines - kazdy sudy pulradek ma vyssi intenzitu, kazdy lichy ma potlacenou intenzitu
+OFF(n.c.)	ON(GND)		pridavna intenzita se pouzije na vsechny barvy pokud neni vyssi intensita		
+ON(GND)		ON(GND)		pridavna intenzita se pouzije na vsechny barvy krome cerne
