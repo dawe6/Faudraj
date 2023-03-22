@@ -1,0 +1,23 @@
+Pripojovaci konektor:
+---------------------
+ 1   nepouzito
+ 2   nepouzito
+ 3 - propojka1	> OFF(n.c.) - normal, ON(GND) - scanlines, vstup je osetreny odporem 10k na +5V
+ 4 - propojka2	> OFF(n.c.) - normal, ON(GND) - zastaveni vga obrazu, vstup je osetreny odporem 10k na +5V
+ 5 - GND	> zem		k propojkam
+ 6 - GND	> napajeni zem
+ 7 - +5V	> napajeni 5V
+ 8   nepouzito
+ 9 - RED	> v CPC gate array 40010 pin 12
+10 - HSYNC	> v CPC gate array 40010 pin 11
+11 - GREEN	> v CPC gate array 40010 pin 10
+12 - VSYNC	> v CPC gate array 40010 pin 13
+13 - BLUE	> v CPC gate array 40010 pin 8
+14   nepouzito
+15   nepouzito
+16   nepouzito
+17 - CLK16	> v CPC gate array 40010 pin 24
+18   nepouzito
+19   nepouzito
+20   nepouzito
+
