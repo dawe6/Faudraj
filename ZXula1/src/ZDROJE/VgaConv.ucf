@@ -1,0 +1,77 @@
+# ============================================================================
+# == Didaktik M (ULA1, Baltik) Vga konvertor pro hardware Faudraj 3.1	    ==
+# ============================================================================
+# zapojeni pinu vstupniho konektoru CN2 k Xilinx XC95144XL
+NET "SWITCH<0>"		LOC = "P4";			# pin1  - nastavovaci prepinac SW1
+NET "SWITCH<1>"		LOC = "P1";			# pin2  - nastavovaci prepinac SW2
+NET "SWITCH<2>"		LOC = "P2";			# pin3  - nastavovaci prepinac SW3
+NET "SWITCH<3>"		LOC = "P3";			# pin4  - nastavovaci prepinac SW4
+							# pin5	- GND
+							# pin6	- GND
+							# pin7	- Vcc (5V)
+NET "RGBI<0>"		LOC = "P6";			# pin8  - RED signal ULA1
+NET "RGBI<1>"		LOC = "P8";			# pin9	- GREEN signal ULA1
+NET "RGBI<2>"		LOC = "P7";			# pin10 - BLUE signal ULA1
+NET "RGBI<3>"		LOC = "P9";			# pin11	- INTENSITY signal ULA1
+NET "SYNC"		LOC = "P14";			# pin12 - SYNC signal ULA1
+							# pin13	- nezapojeno
+							# pin14 - nezapojeno
+							# pin15 - nezapojeno
+							# pin16 - nezapojeno
+NET "CLK8"		LOC = "P23" | BUFG = CLK;	# pin17 - CLK 8MHz signal ULA1
+							# pin18 - nezapojeno
+							# pin19	- nezapojeno
+							# pin20 - nezapojeno
+# ============================================================================
+# zapojeni oscilatoru k Xilinx XC95144XL
+NET "CLK25"		LOC = "P27" | BUFG = CLK;	# hodiny oscilatoru 74HCU04 (25MHz)
+# ============================================================================
+# pripojeni VGA pres oddelovac 74x245 a odporove pole
+NET "VGARED1"		LOC = "P36";			# cervena slozka vysoka intenzita
+NET "VGARED2"		LOC = "P35";			# cervena slozka stredni intenzita
+NET "VGARED3"		LOC = "P86";			# cervena slozka nizka intenzita
+NET "VGAGRN1"		LOC = "P91";			# zelena slozka vysoka intenzita
+NET "VGAGRN2"		LOC = "P90";			# zelena slozka stredni intenzita
+NET "VGAGRN3"		LOC = "P89";			# zelena slozka nizka intenzita
+NET "VGABLU1"		LOC = "P34";			# modra slozka vysoka intenzita
+NET "VGABLU2"		LOC = "P92";			# modra slozka stredni intenzita
+NET "VGABLU3"		LOC = "P87";			# modra slozka nizka intenzita
+NET "VGAHSYNC"		LOC = "P37";			# horizontalni synchronizace
+NET "VGAVSYNC"		LOC = "P39";			# vertikalni synchronizace
+# ============================================================================
+# zapojeni staticke pameti RAM 256k*16 nebo 64k*16 k Xilinx XC95144XL
+NET "RAMWRT"		LOC = "P68";			# povoleni zapisu do ram
+NET "RAMADR<0>"		LOC = "P63";			# adresa ram - 256x16 bit0	64x16 bit0
+NET "RAMADR<1>"		LOC = "P64";			# adresa ram - 256x16 bit1	64x16 bit1
+NET "RAMADR<2>"		LOC = "P65";			# adresa ram - 256x16 bit2	64x16 bit2
+NET "RAMADR<3>"		LOC = "P66";			# adresa ram - 256x16 bit3	64x16 bit3
+NET "RAMADR<4>"		LOC = "P67";			# adresa ram - 256x16 bit4	64x16 bit4
+NET "RAMADR<5>"		LOC = "P70";			# adresa ram - 256x16 bit5	64x16 bit5
+NET "RAMADR<6>"		LOC = "P71";			# adresa ram - 256x16 bit6	64x16 bit6
+NET "RAMADR<7>"		LOC = "P72";			# adresa ram - 256x16 bit7	64x16 bit7
+NET "RAMADR<8>"		LOC = "P73";			# adresa ram - 256x16 bit8	64x16 bit8
+NET "RAMADR<9>"		LOC = "P54";			# adresa ram - 256x16 bit11	64x16 bit9
+NET "RAMADR<10>"	LOC = "P55";			# adresa ram - 256x16 bit12	64x16 bit10
+NET "RAMADR<11>"	LOC = "P56";			# adresa ram - 256x16 bit13	64x16 bit11
+NET "RAMADR<12>"	LOC = "P58";			# adresa ram - 256x16 bit14	64x16 bit12
+NET "RAMADR<13>"	LOC = "P59";			# adresa ram - 256x16 bit15	64x16 bit13
+NET "RAMADR<14>"	LOC = "P60";			# adresa ram - 256x16 bit16	64x16 bit14
+NET "RAMADR<15>"	LOC = "P61";			# adresa ram - 256x16 bit17	64x16 bit15
+NET "RAMADR<16>"	LOC = "P74";			# adresa ram - 256x16 bit9	n.c.
+NET "RAMADR<17>"	LOC = "P53";			# adresa ram - 256x16 bit10	n.c.
+NET "RAMDAT<0>"		LOC = "P85";			# ram data - bit0
+NET "RAMDAT<1>"		LOC = "P76";			# ram data - bit1
+NET "RAMDAT<2>"		LOC = "P77";			# ram data - bit2
+NET "RAMDAT<3>"		LOC = "P78";			# ram data - bit3
+NET "RAMDAT<4>"		LOC = "P79";			# ram data - bit4
+NET "RAMDAT<5>"		LOC = "P80";			# ram data - bit5
+NET "RAMDAT<6>"		LOC = "P81";			# ram data - bit6
+NET "RAMDAT<7>"		LOC = "P82";			# ram data - bit7
+NET "RAMDAT<8>"		LOC = "P52";			# ram data - bit 8
+NET "RAMDAT<9>"		LOC = "P46";			# ram data - bit 9
+NET "RAMDAT<10>"	LOC = "P49";			# ram data - bit 10
+NET "RAMDAT<11>"	LOC = "P50";			# ram data - bit 11
+NET "RAMDAT<12>"	LOC = "P43";			# ram data - bit 12
+NET "RAMDAT<13>"	LOC = "P42";			# ram data - bit 13
+NET "RAMDAT<14>"	LOC = "P41";			# ram data - bit 14
+NET "RAMDAT<15>"	LOC = "P40";			# ram data - bit 15
