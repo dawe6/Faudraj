@@ -1,0 +1,33 @@
+Integrovane obvody:
+ 1ks Xilinx XC95144XL (TQFP100)
+ 1ks SRAM max 30ns 64k*16 nebo SRAM 256k*16 (TSOP44-II)
+ 2ks 74LS245 (SO20)
+ 1ks 1117-33 (SOT223)
+ 1ks 74HCU04 (SO14)
+
+Diody:
+ 1ks SMD spinaci dioda
+
+Kondenzatory:
+ 2ks 10uF/10V (elektrolyt prumer 5mm)
+14ks 100nF (603)
+ 6ks 22pF (603)
+
+Odpory:
+ 2ks 22R (603)
+ 3ks 510R (603)
+ 3ks 1k (603)
+ 3ks 2k (603)
+ 2ks 1M (603)
+
+Odporova pole:
+ 4ks 22R-56R (1206)
+ 2ks 10k (1206)
+
+Krystaly:
+ 1ks 25MHz
+ 1ks 14MHz (z pocitace)
+
+Konektory:
+ 1ks VGA konektor
+ 1ks pinova lista 2*10 pin
