@@ -1,0 +1,47 @@
+Pripojovaci konektor:
+---------------------
+ 1 - propojka1	> mod zobrazeni viz tabulka "Barevne mody", vstup je osetreny odporem 10k na +5V
+ 2 - propojka2	> mod zobrazeni viz tabulka "Barevne mody", vstup je osetreny odporem 10k na +5V
+ 3 - propojka3	> mod zobrazeni viz tabulka "Barevne mody", vstup je osetreny odporem 10k na +5V
+ 4 - -CSWR1	> povoleni/zakazani programoveho nastaveni Barevneho modu (viz "Nastaveni barevneho modu"), vstup je osetreny odporem 10k na +5V
+ 5 - GND	> zem           k prepinacum
+ 6 - GND	> zem		POZOR - ctete oddil napajeni
+ 7 - +5V	> napajeni	POZOR - ctete oddil napajeni
+ 8 - DB0	> bit0 datove sbernice PMD85
+ 9 - DB1	> bit1 datove sbernice PMD85
+10 - DB2	> bit2 datove sbernice PMD85
+11 - DB3	> bit3 datove sbernice PMD85
+12 - DB4	> bit4 datove sbernice PMD85
+13 - DB5	> bit5 datove sbernice PMD85
+14 - DB6	> bit6 datove sbernice PMD85
+15 - DB7	> bit7 datove sbernice PMD85
+16 - STB	> strobe videodat (pin8 jakehokoli obvodu MH7496)
+17 - CLK	> hodiny 18,432MHz (pin8 obvodu MH74164)
+18 - R14ADR 	> nejvyssi bit citace videoadresy (pin3 jakehokoli obvodu MH7493)
+19   nepouzito
+20 - -CSWR2	> z externiho dekoderu adresy (viz "Nastaveni barevneho modu")
+
+
+Napajeni
+---------------------------
+Je nutne napajeni konvertoru zapojit co nejblize k privodu napajeni do desky PMD85. Pri testech jsem mel napajeni privedene od logickych obvodu nad procesorem a delalo to neuveritelne veci.
+
+
+Nastaveni barevneho modu:
+---------------------------
+- Nastaveni pomoci prepinacu.
+Na pozici propojka1-propojka3 lze zapojit DIP switche, barevny mod se pak voli kombinaci prepinacu (dle tabulky Barevne mody). Pri zapnuti (ne pri resetu) se mod nastavi vzdy podle prepinacu. Barevny mod podle prepinacu se nastavuje ZMENOU prepinacu - to znamena pokud bude mod zmenen programove ke zmene barevneho modu podle prepinacu dojde az tehdy kdyz se nastaveni prepinacu zmeni. 
+- Programove nastaveni modu
+Pro tuto moznost jsou vyhrazeny dva vstupy CSWR1 a CSWR2. Pokud je jeden ze signalu v log 0 a na druhem je sestupna hrana nastavi se barevny mod podle stavu na datove sbernici DB2-DB0. Osobne jsem pro zapojeni vstupu CSWR1 na DIP switch s funkci povoleni nebo zakazani programoveho ovladani barevneho modu. Vstup CSWR2 bych pak zapojil na vystup nejakeho adresniho dekoderu. Adresu portu si kvuli svym znalostem PMD netroufam urcit a je na vseobecne dohode uzivatelu.
+
+Barevne mody:
+---------------------------
+(DB2-DB0)	propojka1	propojka2	propojka3	funkce
+     111	OFF(n.c.)	OFF(n.c.)	OFF(n.c.)	Monochromaticky mod PMD85, PMD85.2, PMD85.2A
+     110	ON(GND)		OFF(n.c.)	OFF(n.c.)	Monochromaticky mod PMD85, PMD85.2, PMD85.2A - pouze zelena barva
+     101	OFF(n.c.)	ON(GND)		OFF(n.c.)	Monochromaticky mod PMD85.3		
+     100	ON(GND)		ON(GND)		OFF(n.c.)	Monochromaticky mod PMD85.3 - pouze zelena barva
+     011	OFF(n.c.)	OFF(n.c.)	ON(GND)		Barevny mod PMD85, PMD85.2, PMD85.2A
+     010	ON(GND)		OFF(n.c.)	ON(GND)		Barevny mod PMD85.3
+     001	OFF(n.c.)	ON(GND)		ON(GND)		ColorAce
+     000	ON(GND)		ON(GND)		ON(GND)		HexaC
